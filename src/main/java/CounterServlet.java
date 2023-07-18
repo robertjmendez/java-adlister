@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @WebServlet(name = "CounterServlet", urlPatterns = "/count")
-public class PageViewCounter extends HttpServlet {
+public class CounterServlet extends HttpServlet {
     private int count = 0;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
@@ -15,6 +15,10 @@ public class PageViewCounter extends HttpServlet {
 
         count++;
 
+        String reset = req.getParameter("reset");
+        if (req.getParameter("reset") != null) {
+            count = 1;
+        }
         out.println("<h1>Page views: " + count + "</h1>");
     }
 }
