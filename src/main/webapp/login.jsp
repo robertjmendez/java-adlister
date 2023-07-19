@@ -38,7 +38,7 @@ and the password is "password", redirect the user to the profile page; otherwise
     String password = request.getParameter("password");
 
     if (username != null && password != null) {
-        if ("admin".equals(username) && "password".equals(password)) {
+        if (username.equals("admin") && password.equals("password")) {
             response.sendRedirect("profile.jsp");
         } else {
             response.sendRedirect("login.jsp");
