@@ -22,12 +22,12 @@ Inside of login.jsp write some code to check the submmitted values. If the usern
 and the password is "password", redirect the user to the profile page; otherwise, redirect back to the login form.--%>
 <form action="login.jsp" method="post">
     <div>
-        <label>Username:</label>
-        <input type="text" name="username" required>
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required>
     </div>
     <div>
-        <label>Password:</label>
-        <input type="password" name="password" required>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
     </div>
     <input type="submit" value="Login">
 </form>
