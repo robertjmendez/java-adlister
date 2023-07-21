@@ -11,7 +11,7 @@
     <title>Pizza Order</title>
 </head>
 <body>
-<form action="PizzaOrderServlet" method="post">
+<form action="/pizza-order" method="post">
     <div>
         <label for="crust">Crust Type:</label>
         <select id="crust" name="crust">
