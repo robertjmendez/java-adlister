@@ -12,7 +12,7 @@
     <title>Pick a Color</title>
 </head>
 <body>
-<form action="PickColorServlet" method="post">
+<form action="pickcolor" method="post">
     <label for="color">Enter your favorite color:</label>
     <input type="text" id="color" name="color" required>
     <input type="submit" value="Submit">

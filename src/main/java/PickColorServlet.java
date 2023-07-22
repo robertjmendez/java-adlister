@@ -6,12 +6,17 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URLEncoder;
 
-@WebServlet(name = "PickColorServlet", urlPatterns = "/PickColorServlet")
+@WebServlet(name = "PickColorServlet", urlPatterns = "/pickcolor")
 public class PickColorServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String color = request.getParameter("color");
         request.setAttribute("color", color);
-        request.getRequestDispatcher("ViewColorServlet").forward(request, response);
+        request.getRequestDispatcher("/viewcolor").forward(request, response);
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("/pickcolor.jsp").forward(request, response);
     }
 }
+
 
