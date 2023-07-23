@@ -7,6 +7,11 @@ import java.io.IOException;
 
 @WebServlet(name = "PizzaOrderServlet", urlPatterns = "/pizza-order")
 public class PizzaOrderServlet extends HttpServlet {
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("/pizza-order.jsp").forward(request, response);
+    }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String crust = request.getParameter("crust");
         String sauce = request.getParameter("sauce");
@@ -19,9 +24,5 @@ public class PizzaOrderServlet extends HttpServlet {
         System.out.println("Size: " + size);
         System.out.println("Toppings: " + (toppings != null ? String.join(", ", toppings) : "None"));
         System.out.println("Delivery address: " + address);
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/pizza-order.jsp").forward(request, response);
     }
 }
